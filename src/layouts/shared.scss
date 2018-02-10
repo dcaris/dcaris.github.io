@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+/* Color variables for the website */
+
+$bgDefault: rgb(244,
+247,
+248);
+$bgHighlight: #E5E8E9;
+$colDefault: #8832df;
+$colHighlight: #6606b6;
+$fontDefault: #333;
+$fontHeading: #5A088A;
+$fontHighlight: #8832df;
+$dropDown: true;
+@mixin mquery($sizes...) {
+    @each $size in $sizes {
+        @if $size==xs {
+            @media (min-width: 480px) {
+                @content;
+            }
+        }
+        @if $size==small or $size==non-mobile {
+            @media (min-width: 768px) {
+                @content;
+            }
+        }
+        @if $size==medium or $size==non-mobile {
+            @media (min-width: 992px) {
+                @content;
+            }
+        }
+        @if $size==large or $size==non-mobile {
+            @media (min-width: 1200px) {
+                @content;
+            }
+        }
+    }
+}
