@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import '../styles/post.module.scss';
+import '../styles/post.scss';
 
 export default function Template({
   data

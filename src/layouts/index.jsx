@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import '../styles/site.module.scss'
 import Sidebar from '../components/Sidebar';
 
 const TemplateWrapper = ({children}) => (
@@ -13,11 +12,15 @@ const TemplateWrapper = ({children}) => (
                 name: 'description',
                 content: 'Sample'
             }
-            
+        ]}
+            link={[{
+                rel: "stylesheet",
+                href: "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            }
         ]}/>
         <div className="row">
             <Sidebar/>
-            <div className="dc-body-content">
+            <div>
                 {children()}
             </div>
         </div>
