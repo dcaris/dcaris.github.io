@@ -16,21 +16,20 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     dcBodyRow: {
-        //display: 'table',
         width: '100%',
         height: '100%'
     },
     dcBodyContent: {
-        padding: '0px',
+        padding: '20px',
         width: '100%',
         height: '100%',
-        backgroundColor: colours.bgDefault,
-        marginLeft: '20px',
+        margin: '0px',
         marginTop: '-10px',
+        backgroundColor: colours.bgDefault,
         [viewports.atLeastTablet]: {
             //overflowY: 'scroll'
-            marginLeft: '40px',
-            marginTop: '-10px'
+            padding: '20px',
+            margin: '-20px'
         }
     },
     dcBodyContentParagraph: {
@@ -56,10 +55,10 @@ const TemplateWrapper = ({children}) => (
             }
         ]}/>
         <Row className={css(styles.dcBodyRow)}>
-            <Col xs={12} sm={3} md={3} lg={3} xl={3}>
+            <Col xs={12} sm={4} md={4} lg={3} xl={3}>
                 <Sidebar/>
             </Col>
-            <Col xs={12} sm={9} md={9} lg={9} xl={9}>
+            <Col xs={12} sm={8} md={8} lg={9} xl={9}>
                 <div className={css(styles.dcBodyContent)}>
                     {children()}
                 </div>

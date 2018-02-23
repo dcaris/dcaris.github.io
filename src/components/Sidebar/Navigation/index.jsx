@@ -14,8 +14,15 @@ const styles = StyleSheet.create({
     marginBottom: '10px',
     paddingLeft: '0px',
     textAlign: 'center',
-    // >li {     >a {     }     >.nav-divider-icon {         color: $colDefault; } }
-    [viewports.atLeastTablet]: {
+    [viewports.sm]: {
+      marginLeft: '20px',
+      fontSize: '30px'
+    },
+    [viewports.md]: {
+      marginLeft: '25px',
+      fontSize: '40px'
+    },
+    [viewports.lg]: {
       marginLeft: '45px',
       fontSize: '40px'
     }

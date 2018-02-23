@@ -1,10 +1,11 @@
 // Matching
-export const isMobile = '@media (max-width: 600px)';
-export const isTablet = '@media (min-width: 601px) and (max-width: 1000px)';
-export const isDesktop = '@media (min-width: 1000px)';
+export const xs = '@media (max-width: 575px)';
+export const sm = '@media (min-width: 576px) and (max-width: 768px)';
+export const md = '@media (min-width: 768px) and (max-width: 1024px)';
+export const lg = '@media (min-width: 1025px)';
 
 // AtLeast
-export const atLeastTablet = '@media (min-width: 601px)';
+export const atLeastTablet = '@media (min-width: 576px)';
 
 // Below
-export const belowDesktop = '@media (max-width: 999px)';
+export const belowDesktop = '@media (max-width: 1024px)';  

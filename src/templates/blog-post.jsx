@@ -6,7 +6,6 @@ import {Grid, Row, Col} from 'react-flexbox-grid';
 import {StyleSheet, css} from 'aphrodite';
 import * as colours from '../styles/colours';
 import * as viewports from '../styles/viewport';
-// import '../styles/post.scss';
 
 const styles = StyleSheet.create({
   dcPost: {

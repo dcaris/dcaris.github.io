@@ -17,9 +17,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     [viewports.atLeastTablet]: {
       height: '100%',
-      float: 'left',
       textAlign: 'left',
-      width: '300px'
     }
 
   },
@@ -38,7 +36,15 @@ const styles = StyleSheet.create({
       marginTop: '-5px',
       paddingTop: '0px',
       paddingBottom: '5px'
-    }
+    },
+    [viewports.sm]: {
+      fontSize: '59px',
+      padding: '20px',
+    },
+    [viewports.md]: {
+      fontSize: '59px',
+      padding: '20px',
+    },
   },
   dcSidebarHeadingLink: {
     color: 'white',
