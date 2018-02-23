@@ -14,6 +14,7 @@
         "gatsby-plugin-sass": "^1.0.17",
         "gatsby-source-filesystem": "^1.5.20",
         "gatsby-transformer-remark": "^1.7.33",
+        "react-flexbox-grid": "^2.0.0",
         "react-helmet": "^5.2.0"
     },
     "keywords": [
