@@ -55,10 +55,10 @@ const TemplateWrapper = ({children}) => (
             }
         ]}/>
         <Row className={css(styles.dcBodyRow)}>
-            <Col xs={12} sm={4} md={4} lg={3} xl={3}>
+            <Col xs={12} sm={4} md={3} lg={3} xl={3}>
                 <Sidebar/>
             </Col>
-            <Col xs={12} sm={8} md={8} lg={9} xl={9}>
+            <Col xs={12} sm={8} md={9} lg={9} xl={9}>
                 <div className={css(styles.dcBodyContent)}>
                     {children()}
                 </div>
