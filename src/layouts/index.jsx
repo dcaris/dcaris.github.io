@@ -17,19 +17,16 @@ const styles = StyleSheet.create({
     },
     dcBodyRow: {
         width: '100%',
-        height: '100%'
+        height: '100%',
+        display: 'table',
     },
     dcBodyContent: {
-        padding: '20px',
-        width: '100%',
-        height: '100%',
-        margin: '0px',
-        marginTop: '-10px',
+        float: 'none',
+        display: 'block',
         backgroundColor: colours.bgDefault,
         [viewports.atLeastTablet]: {
-            //overflowY: 'scroll'
-            padding: '20px',
-            margin: '-20px'
+            overflowY: 'scroll',
+            height: '100%',
         }
     },
     dcBodyContentParagraph: {
@@ -55,14 +52,11 @@ const TemplateWrapper = ({children}) => (
             }
         ]}/>
         <Row className={css(styles.dcBodyRow)}>
-            <Col xs={12} sm={4} md={3} lg={3} xl={3}>
-                <Sidebar/>
-            </Col>
-            <Col xs={12} sm={8} md={9} lg={9} xl={9}>
-                <div className={css(styles.dcBodyContent)}>
-                    {children()}
-                </div>
-            </Col>
+            <Sidebar/>
+
+            <div className={css(styles.dcBodyContent)}>
+                {children()}
+            </div>
         </Row>
     </Grid>
 )

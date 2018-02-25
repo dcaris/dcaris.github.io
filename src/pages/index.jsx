@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
 export default function Index({data}) {
   const {edges: posts} = data.allMarkdownRemark;
   return (
-    <div className="blog-posts">
+    <div className="table">
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({node: post}) => {

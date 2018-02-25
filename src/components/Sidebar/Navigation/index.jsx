@@ -14,15 +14,7 @@ const styles = StyleSheet.create({
     marginBottom: '10px',
     paddingLeft: '0px',
     textAlign: 'center',
-    [viewports.sm]: {
-      marginLeft: '20px',
-      fontSize: '30px'
-    },
-    [viewports.md]: {
-      marginLeft: '25px',
-      fontSize: '40px'
-    },
-    [viewports.lg]: {
+    [viewports.atLeastTablet]: {
       marginLeft: '45px',
       fontSize: '40px'
     }
