@@ -8,8 +8,8 @@
 
 const path = require('path');
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-    const { createPage } = boundActionCreators;
+exports.createPages = ({boundActionCreators, graphql}) => {
+    const {createPage} = boundActionCreators;
 
     const blogPostTemplate = path.resolve(`src/templates/blog-post.jsx`);
 
@@ -31,51 +31,39 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
       }
     }
-  }`)
-        .then(result => {
-            if (result.errors) {
-                return Promise.reject(result.errors);
-            }
+  }`).then(result => {
+        if (result.errors) {
+            return Promise.reject(result.errors);
+        }
 
-            result.data.allMarkdownRemark.edges
-                .forEach(({ node }) => {
-                    createPage({
-                        path: node.frontmatter.path,
-                        component: blogPostTemplate,
-                        context: {} // additional data can be passed via context
-                    });
+        result
+            .data
+            .allMarkdownRemark
+            .edges
+            .forEach(({node}) => {
+                createPage({
+                    path: node.frontmatter.path, component: blogPostTemplate, context: {} // additional data can be passed via context
                 });
-        });
+            });
+    });
 }
 
-exports.modifyWebpackConfig = ({ config, stage }) => {
+exports.modifyWebpackConfig = ({config, stage}) => {
     switch (stage) {
         case "develop":
-            config.loader("css", {
-                include: /flexboxgrid/,
-            });
-
+            config.loader("css", {include: /flexboxgrid/});
             break;
 
         case "build-css":
-            config.loader("css", {
-                include: /flexboxgrid/,
-            });
-
+            config.loader("css", {include: /flexboxgrid/});
             break;
 
         case "build-html":
-            config.loader("css", {
-                include: /flexboxgrid/,
-            });
-
+            config.loader("css", {include: /flexboxgrid/});
             break;
 
         case "build-javascript":
-            config.loader("css", {
-                include: /flexboxgrid/,
-            });
-
+            config.loader("css", {include: /flexboxgrid/});
             break;
     }
 
