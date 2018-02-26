@@ -78,7 +78,11 @@ export default function Post({
       <Helmet title={`Daniel Caris - ${data.frontmatter.title}`}/>
       <div className={css(styles.dcPost)}>
         <h1 className={css(styles.dcPostTitle)}>
-          <Link to={data.frontmatter.path} className={css(styles.dcPostTitleLink)}>{data.frontmatter.title}</Link>
+          {data.frontmatter.path === undefined
+            ? (data.frontmatter.title)
+            : (
+              <Link to={data.frontmatter.path} className={css(styles.dcPostTitleLink)}>{data.frontmatter.title}</Link>
+            )}
         </h1>
         {showMetadata === true && <div className={css(styles.dcPostMeta)}>
           <span className={css(styles.dcPostMetaSpan)}>
