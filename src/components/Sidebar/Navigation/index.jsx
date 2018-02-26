@@ -62,11 +62,11 @@ const Navigation = () => (
         Blog
       </Link>
     </li>
-    <li className={css(styles.dcSidebarNavListItem)}>
+    {/* <li className={css(styles.dcSidebarNavListItem)}>
       <Link to="/work" className={css(styles.dcSidebarNavListItemLink)}>
         Portfolio
       </Link>
-    </li>
+    </li> */}
     <li className={css(styles.dcSidebarNavListItem)}>
       <Link to="/about" className={css(styles.dcSidebarNavListItemLink)}>
         About
