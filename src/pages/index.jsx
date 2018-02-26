@@ -1,36 +1,57 @@
 import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
+import tower from '../images/tower.jpg';
 
-import Post from '../components/Post'
+import {Grid, Row, Col} from 'react-flexbox-grid';
+import {StyleSheet, css} from 'aphrodite';
+import * as colours from '../styles/colours';
+import * as viewports from '../styles/viewport';
 
-export default function Index({data}) {
-  const {edges: posts} = data.allMarkdownRemark;
+const styles = StyleSheet.create({
+  dcHome: {
+    [viewports.atLeastTablet]: {
+      width: '100%',
+      height: '100%',
+      backgroundImage: 'url(' + tower + ')',
+      overflow: 'hidden',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center',
+      webkitFilter: 'grayscale(100%)',
+      filter: 'grayscale(100%)'
+    }
+  },
+  dcHomeParagraph: {
+    margin: '10px',
+    marginTop: '0',
+    padding: '20px',
+    fontSize: '20px',
+    color: 'black',
+    textAlign: 'justify',
+    [viewports.atLeastTablet]: {
+      position: 'absolute',
+      bottom: '0',
+      textAlign: 'left'
+    }
+  },
+  dcHomeParagraphSpan: {
+    [viewports.atLeastTablet]: {
+      backgroundColor: 'white'
+    }
+  }
+});
+
+export default function Index() {
   return (
-    <div className="table">
-      {posts
-        .filter(post => post.node.frontmatter.title.length > 0)
-        .map(({node: post}) => {
-          return (<Post data={post} content={post.excerpt} showMetadata={true} key={post.id}/>);
-        })}
+    <div className={css(styles.dcHome)}>
+      <p className={css(styles.dcHomeParagraph)}>
+        <span className={css(styles.dcHomeParagraphSpan)}>
+          Hello! I am a software developer from Gold Coast, Australia. I work primarily
+          using a .NET stack, but I love my Mac <i className="fa fa-smile-o"></i>
+          <br />When I'm not coding, I'm parenting, surfing, or watch sports.
+          <br /><b>This is my website</b>
+        </span>
+      </p>
     </div>
   );
 }
-
-export const pageQuery = graphql `
-  query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          id
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            path
-          }
-        }
-      }
-    }
-  }
-`;
