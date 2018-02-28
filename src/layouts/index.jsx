@@ -24,6 +24,8 @@ const styles = StyleSheet.create({
         float: 'none',
         display: 'block',
         backgroundColor: colours.bgDefault,
+        paddingLeft: '20px',
+        paddingRight: '20px',
         [viewports.atLeastTablet]: {
             overflowY: 'scroll',
             height: '100%',

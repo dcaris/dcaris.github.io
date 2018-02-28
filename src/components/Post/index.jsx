@@ -10,11 +10,12 @@ import * as viewports from '../../styles/viewport';
 const styles = StyleSheet.create({
   dcPost: {
     margin: '0',
+    paddingTop: '10px',
     fontFamily: 'Georgia, Cambria, "Times New Roman", Times, serif',
     fontSize: '18px',
     [viewports.atLeastTablet]: {
       margin: '20px',
-      marginTop: '40px'
+      paddingTop: '0',
     }
   },
   dcPostTitle: {
@@ -64,7 +65,8 @@ const styles = StyleSheet.create({
     }
   },
   dcPostContent: {
-    marginTop: '10px'
+    marginTop: '10px',
+    textAlign: 'justify',
   }
 });
 

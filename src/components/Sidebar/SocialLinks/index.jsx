@@ -37,42 +37,44 @@ const styles = StyleSheet.create({
   }
 
   //   >li {       >a {           >i {           }       } >.nav-divider-icon {
-  //     color: $colDefault;       }   }
+  // color: $colDefault;       }   }
 });
 
 const SocialLinks = () => (
   <ul className={css(styles.dcSidebarSocial)}>
     <li className={css(styles.dcSidebarSocialListItem)}>
-      <Link to="http://www.twitter.com/dcaris">
+      <a
+        href="http://www.twitter.com/dcaris"
+        className={css(styles.dcSidebarSocialListItemLink)}>
         <i className={`fa fa-twitter ` + css(styles.dcSidebarSocialListItemLinkIcon)}></i>
-      </Link>
+      </a>
     </li>
     <li className={css(styles.dcSidebarSocialListItem)}>
-      <Link
-        to="http://www.github.com/dcaris"
+      <a
+        href="http://www.github.com/dcaris"
         className={css(styles.dcSidebarSocialListItemLink)}>
         <i className={`fa fa-github ` + css(styles.dcSidebarSocialListItemLinkIcon)}></i>
-      </Link>
+      </a>
     </li>
     <li className={css(styles.dcSidebarSocialListItem)}>
-      <Link
-        to="http://www.instagram.com/dcaris"
+      <a
+        href="http://www.instagram.com/dcaris"
         className={css(styles.dcSidebarSocialListItemLink)}>
         <i className={`fa fa-instagram ` + css(styles.dcSidebarSocialListItemLinkIcon)}></i>
-      </Link>
+      </a>
     </li>
     <li className={css(styles.dcSidebarSocialListItem)}>
-      <Link
-        to="https://www.linkedin.com/in/daniel-caris-1501b122/"
+      <a
+        href="https://www.linkedin.com/in/daniel-caris-1501b122/"
         className={css(styles.dcSidebarSocialListItemLink)}>
         <i className={`fa fa-linkedin ` + css(styles.dcSidebarSocialListItemLinkIcon)}></i>
-      </Link>
+      </a>
     </li>
-    <li className={css(styles.dcSidebarSocialListItem)}>
+    {/* <li className={css(styles.dcSidebarSocialListItem)}>
       <Link to="/contact" className={css(styles.dcSidebarSocialListItemLink)}>
         <i className={`fa fa-envelope ` + css(styles.dcSidebarSocialListItemLinkIcon)}></i>
       </Link>
-    </li>
+    </li> */}
   </ul>
 )
 
