@@ -2,6 +2,7 @@
 path: "/first-post"
 date: "2018-03-01T17:12:33.962Z"
 title: "My First Post"
+tags: ["personal", "blah"]
 ---
 
 Hey, my name is Daniel Caris and I am a Software Developer from Gold Coast, Australia.
