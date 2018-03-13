@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     fontSize: '18px',
     [viewports.atLeastTablet]: {
       margin: '20px',
-      paddingTop: '0',
+      paddingTop: '0'
     }
   },
   dcPostTitle: {
@@ -59,22 +59,21 @@ const styles = StyleSheet.create({
   dcPostMetaSpanLink: {
     color: 'rgb(187, 183, 183)',
     transition: '0.5s ease',
+    paddingRight: '5px',
+    textDecorationLine: 'none',
     ':hover': {
-      textDecorationLine: 'none',
       color: 'rgb(131, 128, 128)'
     }
   },
   dcPostContent: {
     marginTop: '10px',
-    textAlign: 'justify',
+    textAlign: 'justify'
   }
 });
 
-export default function Post({
-  data,
-  content,
-  showMetadata = true
-}) {
+const Post = props => {
+  const data = props.data;
+  console.log(data);
   return (
     <article className={css(styles.dcPost)} key={data.id}>
       <Helmet title={`Daniel Caris - ${data.frontmatter.title}`}/>
@@ -86,18 +85,32 @@ export default function Post({
               <Link to={data.frontmatter.path} className={css(styles.dcPostTitleLink)}>{data.frontmatter.title}</Link>
             )}
         </h1>
-        {showMetadata === true && <div className={css(styles.dcPostMeta)}>
+        {props.showMetadata === true && 
+        <div className={css(styles.dcPostMeta)}>
           <span className={css(styles.dcPostMetaSpan)}>
-            <i className={`fa fa-calendar ` + css(styles.dcPostMetaSpanIcon)}></i>{data.frontmatter.date}</span>
-
+            <i className={`fa fa-calendar ` + css(styles.dcPostMetaSpanIcon)}></i>{data.frontmatter.date}
+          </span>
+          {data.frontmatter.tags !== undefined && 
+          <span className={css(styles.dcPostMetaSpan)}>
+            <i className={`fa fa-tag ` + css(styles.dcPostMetaSpanIcon)}></i>
+            {data
+              .frontmatter
+              .tags
+              .map((tag) => {
+                return (
+                  <Link to={`/tags/${tag}`} className={css(styles.dcPostMetaSpanLink)} key={tag}>{tag}</Link>
+                );
+              })}
+          </span>
+          }
         </div>
-}
-        <div
-          className={css(styles.dcPostContent)}
-          dangerouslySetInnerHTML={{
-          __html: content
-        }}/>
+        }
+        <div className={css(styles.dcPostContent)}>
+          {props.children}
+        </div>
       </div>
     </article>
   );
 }
+
+export default Post;

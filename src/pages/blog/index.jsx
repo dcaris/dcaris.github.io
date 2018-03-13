@@ -11,7 +11,14 @@ export default function Index({data}) {
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({node: post}) => {
-          return (<Post data={post} content={post.excerpt} showMetadata={true} key={post.id}/>);
+          return (
+            <Post data={post} showMetadata={true} key={post.id}>
+              <div
+                dangerouslySetInnerHTML={{
+                __html: post.excerpt
+              }}/>
+            </Post>
+          );
         })}
     </div>
   );
@@ -28,6 +35,7 @@ export const pageQuery = graphql `
             title
             date(formatString: "MMMM DD, YYYY")
             path
+            tags
           }
         }
       }

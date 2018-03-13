@@ -6,7 +6,13 @@ import Post from '../components/Post'
 
 export default function Template({data}) {
   const {markdownRemark: post} = data;
-  return (<Post data={post} content={post.html} showMetadata={true}/>);
+  return (
+    <Post data={post} showMetadata={true}>
+      <div dangerouslySetInnerHTML={{
+        __html: post.html
+      }}/>
+    </Post>
+  );
 }
 
 export const pageQuery = graphql `
@@ -17,6 +23,7 @@ export const pageQuery = graphql `
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        tags
       }
     }
   }

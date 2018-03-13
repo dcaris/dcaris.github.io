@@ -13,33 +13,26 @@ const Tags = ({pathContext, data}) => {
     ? ""
     : "s"} tagged with "${tag}"`;
 
-  const content = (
-    <ul>
-      {edges.map(({node}) => {
-        const {path, title} = node.frontmatter;
-        return (
-          <li key={path}>
-            <Link to={path}>{title}</Link>
-          </li>
-        );
-      })}
-    </ul>
-  );
   const post = {
-    html: content,
     frontmatter: {
       title: 'Tags',
       date: null
     }
   };
-  return (<Post data={post} content={post.html} showMetadata={false}/>);
-
-  // return (   <div>     <h1>{tagHeader}</h1>     <ul>       {edges.map(({ node
-  // }) => {         const { path, title } = node.frontmatter;         return (
-  //  <li key={path}>             <Link to={path}>{title}</Link> </li> );
-  // })}     </ul>     {/*             This links to a page that does not yet
-  // exist.             We'll come back to it!           */} <Link to="/tags">All
-  // tags</Link>   </div> );
+  return (
+    <Post data={post} showMetadata={false}>
+      <ul>
+        {edges.map(({node}) => {
+          const {path, title} = node.frontmatter;
+          return (
+            <li key={path}>
+              <Link to={path}>{title}</Link>
+            </li>
+          );
+        })}
+      </ul>
+    </Post>
+  );
 };
 
 Tags.propTypes = {

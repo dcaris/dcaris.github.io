@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     dcBodyRow: {
         width: '100%',
         height: '100%',
-        display: 'table',
+        display: 'table'
     },
     dcBodyContent: {
         float: 'none',
@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
         [viewports.atLeastTablet]: {
             overflowY: 'scroll',
             height: '100%',
+            paddingLeft: '0',
+            paddingRight: '0'
         }
     },
     dcBodyContentParagraph: {
