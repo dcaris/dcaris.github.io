@@ -18,8 +18,14 @@ const ArchivePage = props => {
         .sort()
         .reverse()
         .map(k => {
-          return <div key={k}>
-            <h2>{k}</h2>
+          const post = {
+            id: k,
+            frontmatter: {
+              title: k,
+              date: null
+            }
+          };
+          return <Post data={post} showMetadata={false} key={k}>
             <ul>{_
                 .each(grouped[k])
                 .map(v => {
@@ -28,7 +34,7 @@ const ArchivePage = props => {
                   </li>
                 })}
             </ul>
-          </div>
+          </Post>
         })}
     </div>
   );
