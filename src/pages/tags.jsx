@@ -7,6 +7,7 @@ import kebabCase from "lodash/kebabcase";
 // Components
 import Helmet from "react-helmet";
 import Link from "gatsby-link";
+import Post from '../components/Post'
 
 const TagsPage = ({
   data: {
@@ -19,24 +20,25 @@ const TagsPage = ({
       }
     }
   }
-}) => (
-  <div>
-    <Helmet title={title}/>
-    <div>
-      <h1>Tags</h1>
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-              {tag.fieldValue}
-              ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-);
+}) => {
+  const post = {
+    frontmatter: {
+      title: 'Tags',
+      date: null
+    }
+  };
+  return <Post data={post} showMetadata={false}>
+    <ul>
+      {group.map(tag => (
+        <li key={tag.fieldValue}>
+          <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+            {tag.fieldValue} ({tag.totalCount})
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </Post>
+};
 
 TagsPage.propTypes = {
   data: PropTypes.shape({

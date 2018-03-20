@@ -85,14 +85,14 @@ const Post = props => {
               <Link to={data.frontmatter.path} className={css(styles.dcPostTitleLink)}>{data.frontmatter.title}</Link>
             )}
         </h1>
-        {props.showMetadata === true && 
-        <div className={css(styles.dcPostMeta)}>
+        {props.showMetadata === true && <div className={css(styles.dcPostMeta)}>
           <span className={css(styles.dcPostMetaSpan)}>
             <i className={`fa fa-calendar ` + css(styles.dcPostMetaSpanIcon)}></i>{data.frontmatter.date}
           </span>
-          {data.frontmatter.tags !== undefined && 
-          <span className={css(styles.dcPostMetaSpan)}>
-            <i className={`fa fa-tag ` + css(styles.dcPostMetaSpanIcon)}></i>
+          {data.frontmatter.tags !== undefined && <span className={css(styles.dcPostMetaSpan)}>
+            <Link to={'/tags'} className={css(styles.dcPostMetaSpanLink)}>
+              <i className={`fa fa-tag ` + css(styles.dcPostMetaSpanIcon)}></i>
+            </Link>
             {data
               .frontmatter
               .tags
@@ -102,9 +102,9 @@ const Post = props => {
                 );
               })}
           </span>
-          }
+}
         </div>
-        }
+}
         <div className={css(styles.dcPostContent)}>
           {props.children}
         </div>
