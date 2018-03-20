@@ -8,12 +8,68 @@
 
 const path = require('path');
 const _ = require('lodash');
+const createPaginatedPages = require("gatsby-paginate");
+
+/**
+ * Function for creating Post pages
+ */
+const createPosts = (createPage, posts) => {
+    const postTemplate = path.resolve(`src/templates/post.jsx`);
+
+    posts.forEach(({ node }) => {
+        createPage({
+            path: node.frontmatter.path,
+            component: postTemplate,
+            context: {} // additional data can be passed via context
+        });
+    });
+};
+
+/**
+ * Function for creating Tags pages
+ */
+const createTags = (createPage, posts) => {
+    const tagTemplate = path.resolve("src/templates/tags.jsx");
+
+    // Tag pages:
+    let tags = [];
+
+    // Iterate through each post, putting all found tags into `tags`
+    _.each(posts, edge => {
+        if (_.get(edge, "node.frontmatter.tags")) {
+            tags = tags.concat(edge.node.frontmatter.tags);
+        }
+    });
+
+    // Eliminate duplicate tags
+    tags = _.uniq(tags);
+
+    // Make tag pages
+    tags.forEach(tag => {
+        createPage({
+            path: `/tags/${_.kebabCase(tag)}/`,
+            component: tagTemplate,
+            context: {
+                tag
+            }
+        });
+    });
+};
+
+const createPagination = (createPage, posts) => {
+    createPaginatedPages({
+        edges: posts,
+        createPage: createPage,
+        pageTemplate: "src/templates/page.jsx",
+        pageLength: 5,
+        pathPrefix: "blog",
+        buildPath: (index, pathPrefix) => index > 1 ?
+            `${pathPrefix}/${index}` : `/${pathPrefix}` // This is optional and this is the default
+    });
+}
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
     const { createPage } = boundActionCreators;
-
-    const blogPostTemplate = path.resolve(`src/templates/blog-post.jsx`);
-    const tagTemplate = path.resolve("src/templates/tags.jsx");
 
     return graphql(`{
     allMarkdownRemark(
@@ -26,7 +82,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           html
           id
           frontmatter {
-            date
+            date(formatString: "MMMM DD, YYYY")
             path
             title
             tags
@@ -40,38 +96,9 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         }
 
         const posts = result.data.allMarkdownRemark.edges;
-        posts.forEach(({ node }) => {
-            createPage({
-                path: node.frontmatter.path,
-                component: blogPostTemplate,
-                context: {} // additional data can be passed via context
-            });
-        });
-
-        // Tag pages:
-        let tags = [];
-
-        // Iterate through each post, putting all found tags into `tags`
-        _.each(posts, edge => {
-            if (_.get(edge, "node.frontmatter.tags")) {
-                tags = tags.concat(edge.node.frontmatter.tags);
-            }
-        });
-
-        // Eliminate duplicate tags
-        tags = _.uniq(tags);
-
-        // Make tag pages
-        tags.forEach(tag => {
-            createPage({
-                path: `/tags/${_.kebabCase(tag)}/`,
-                component: tagTemplate,
-                context: {
-                    tag
-                }
-            });
-        });
-
+        createPosts(createPage, posts);
+        createTags(createPage, posts);
+        createPagination(createPage, posts);
     });
 }
 

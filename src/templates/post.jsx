@@ -4,7 +4,7 @@ import Link from 'gatsby-link'
 
 import Post from '../components/Post'
 
-export default function Template({data}) {
+export default function PostTemplate({data}) {
   const {markdownRemark: post} = data;
   return (
     <Post data={post} showMetadata={true}>

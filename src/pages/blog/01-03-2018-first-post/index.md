@@ -1,5 +1,5 @@
 ---
-path: "/first-post"
+path: "/blog/first-post"
 date: "2018-03-01T17:12:33.962Z"
 title: "My First Post"
 tags: ["personal", "blah"]
