@@ -1,23 +1,21 @@
 @import 'shared';
-.bootstrap-tagsinput {
-    width: 100%;
-    padding-bottom: 8px;
-}
-
-.dc-post {
-    margin: 30px;
+.dcPost {
+    margin: 20px;
     font-family: Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 18px;
-    .dc-post-title {
+    .dcPostTitle {
+        margin: 0;
+        margin-bottom: 10px;
         font-family: 'Droid Serif', serif;
         font-weight: 800;
-        font-size: 60px;
+        font-size: 40px;
         line-height: 1em;
         text-decoration-line: none;
         color: $fontDefault;
         >a {
             color: $fontDefault;
             transition: 0.5s ease;
+            text-decoration-line: none;
             >i {
                 font-size: 30px;
                 vertical-align: middle;
@@ -27,8 +25,12 @@
                 text-decoration-line: none;
             }
         }
+        @include mquery(atLeastTablet) {
+            margin-top: 10px;
+            font-size: 60px;
+        }
     }
-    .dc-post-meta {
+    .dcPostMeta {
         color: rgb(187, 183, 183);
         >span {
             text-decoration-line: none;
@@ -39,6 +41,8 @@
             >a {
                 color: rgb(187, 183, 183);
                 transition: 0.5s ease;
+                padding-right: 5px;
+                text-decoration-line: none;
                 &:hover {
                     text-decoration-line: none;
                     color: rgb(131, 128, 128);
@@ -46,10 +50,11 @@
             }
         }
     }
-    .dc-post-content {
+    .dcPostContent {
         margin-top: 10px;
     }
-    @include mquery(small, medium, large) {
-        margin: 50px;
+    @include mquery(atLeastTablet) {
+        margin: 20px;
+        padding-top: 0;
     }
 }

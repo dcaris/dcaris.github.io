@@ -1,40 +1,25 @@
 @import 'shared';
-html {
-    font-family: 'Droid Serif', serif;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background: $bgDefault;
-}
-
-html,
-body {
-    height: 100%;
-}
-
-.dc-body {
+.dcBody {
     padding: 0px;
     width: 100%;
     height: 100%;
-    >.row {
+    >.dcBodyRow {
         display: table;
         width: 100%;
         height: 100%;
     }
 }
 
-.dc-panel {
+.dcPanel {
     float: none;
     display: block;
-    @include mquery(small, medium, large) {
+    @include mquery(atLeastTablet) {
         height: 100%;
     }
 }
 
-.dc-sidebar {
-    @extend .dc-panel;
+.dcSidebar {
+    @extend .dcPanel;
     background-color: $colDefault;
     padding-bottom: 10px;
     text-align: center;
@@ -43,10 +28,11 @@ body {
         padding-bottom: 0px;
         margin-left: 10px;
         margin-top: 0px;
+        margin-bottom: 10px;
         color: $fontHeading;
         font-family: 'Anton', sans-serif;
         font-size: 79px;
-        line-height: 0.9em;
+        line-height: 0.95em;
         letter-spacing: normal;
         &:nth-of-type(2) {
             margin-top: -5px;
@@ -56,22 +42,25 @@ body {
         >a {
             color: white;
             transition: 0.5s ease;
+            text-decoration: none;
             &:hover {
                 color: rgb(216, 214, 214);
-                text-decoration-line: none;
             }
         }
     }
-    @include mquery(small, medium, large) {
+    @include mquery(atLeastTablet) {
+        height: 100%;
         float: left;
         text-align: left;
         width: 300px;
     }
 }
 
-.dc-sidebar-nav {
+.dcSidebarNav {
     list-style: none;
     font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-left: 0px;
     padding-left: 0px;
     text-align: center;
@@ -91,7 +80,7 @@ body {
             &:hover {
                 border-bottom: 3px solid $colHighlight;
             }
-            @include mquery(non-mobile) {
+            @include mquery(atLeastTablet) {
                 padding-left: 5px;
                 border-left: 3px solid transparent;
                 border-bottom: none;
@@ -105,23 +94,24 @@ body {
         >.nav-divider-icon {
             color: $colDefault;
         }
-        @include mquery(non-mobile) {
+        @include mquery(atLeastTablet) {
             display: list-item;
             float: none;
             text-align: left;
             margin-bottom: -10px;
         }
     }
-    @include mquery(non-mobile) {
+    @include mquery(atLeastTablet) {
         margin-left: 45px;
         font-size: 40px;
     }
 }
 
-.dc-sidebar-social {
+.dcSidebarSocial {
     list-style: none;
     font-size: 20px;
     padding: 0;
+    text-align: center;
     >li {
         display: inline-block;
         float: none;
@@ -150,21 +140,25 @@ body {
     }
 }
 
-.dc-body-content {
-    @extend .dc-panel;
+.dcBodyContent {
+    @extend .dcPanel;
     background-color: $bgDefault;
+    padding-left: 20px;
+    padding-right: 20px;
     >p {
         color: white;
         margin: 10px;
         text-align: justify;
         font-size: 20px;
     }
-    @include mquery(small, medium, large) {
+    @include mquery(atLeastTablet) {
         overflow-y: scroll;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
-#dc-home {
+.dcHome {
     >p {
         margin: 10px;
         margin-top: 0;
@@ -172,21 +166,21 @@ body {
         font-size: 20px;
         color: black;
         text-align: justify;
-        @include mquery(small, medium, large) {
+        @include mquery(atLeastTablet) {
             position: absolute;
             bottom: 0;
             text-align: left;
         }
         >span {
-            @include mquery(small, medium, large) {
+            @include mquery(atLeastTablet) {
                 background-color: white;
             }
         }
     }
-    @include mquery(small, medium, large) {
+    @include mquery(atLeastTablet) {
         width: 100%;
         height: 100%;
-        background-image: url('/images/tower.jpg');
+        background-image: url('../images/tower.jpg');
         overflow: hidden;
         background-size: cover;
         background-position: center center;
