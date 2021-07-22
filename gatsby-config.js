@@ -1,25 +1,23 @@
 module.exports = {
-    pathPrefix: "/dcaris",
-    siteMetadata: {
-        title: 'Daniel Caris',
+  siteMetadata: {
+    siteUrl: "https://dcaris.github.io",
+    title: "Daniel Caris Portfolio",
+  },
+  plugins: [
+    "gatsby-plugin-sass",
+    "gatsby-plugin-image",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-pnpm",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
     },
-    plugins: [
-        'gatsby-plugin-react-helmet',
-        'gatsby-plugin-catch-links',
-        'gatsby-plugin-lodash',
-        'gatsby-plugin-sass',
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                path: `${__dirname}/src/pages/blog`,
-                name: 'pages',
-            },
-        },
-        {
-            resolve: 'gatsby-transformer-remark',
-            options: {
-                plugins: [] // just in case those previously mentioned remark plugins sound cool :)
-            }
-        },
-    ]
+  ],
 };
