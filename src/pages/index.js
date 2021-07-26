@@ -1,7 +1,7 @@
 import * as React from "react"
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Layout, About, Work } from '@components';
+import { Layout, About, Work, Contact, Projects } from '@components';
 
 // styles
 const ContainerStyle = styled.main`
@@ -15,6 +15,8 @@ const IndexPage = ({location}) => {
       <ContainerStyle className="fillHeight">
         <About />
         <Work />
+        <Contact />
+        <Projects />
       </ContainerStyle>
     </Layout>
   )
