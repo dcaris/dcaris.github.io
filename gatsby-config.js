@@ -2,6 +2,11 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://dcaris.github.io",
     title: "Daniel Caris Portfolio",
+    titleTemplate: "%s - The OG Daniel Caris",
+    description: "Daniel Caris is a Software Engineer based in Brisbane, QLD, Australia specializing in building systems in .NET.",
+    url: "https://dcaris.github.io",
+    image: "/og.png",
+    twitterUsername: "@dcaris"
   },
   plugins: [
     "gatsby-plugin-sass",
