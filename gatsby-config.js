@@ -15,6 +15,7 @@ module.exports = {
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
     "gatsby-plugin-pnpm",
+    "gatsby-plugin-styled-components",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
