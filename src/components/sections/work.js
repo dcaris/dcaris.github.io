@@ -20,23 +20,18 @@ const ParagraphStyle = styled.p`
   marginBottom: 48,
 `;
 
-// markup
-const About = () => {
+const Work = () => {
     return (
         <PageStyle>
-            <HeadingStyle>
-                Hi, my name is
-                <br />
-                <HeadingAccentStyle>Daniel Caris</HeadingAccentStyle>
-            </HeadingStyle>
+            <HeadingStyle>Where I Have Worked</HeadingStyle>
             <ParagraphStyle>
-                I'm a Software Engineer based in Brisbane, QLD, Australia specializing in building systems in .NET.
-                <span role="img" aria-label="Sunglasses smiley emoji">
-                    😎
-                </span>
+                Virtus Health
+            </ParagraphStyle>
+            <ParagraphStyle>
+                SJK Consulting
             </ParagraphStyle>
         </PageStyle>
     )
 }
 
-export default About
+export default Work
