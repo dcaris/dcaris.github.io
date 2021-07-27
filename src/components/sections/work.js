@@ -2,7 +2,7 @@ import * as React from "react"
 import styled from 'styled-components';
 
 // styles
-const PageStyle = styled.div`
+const PageStyle = styled.section`
   color: "#232129",
   padding: 96,
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
