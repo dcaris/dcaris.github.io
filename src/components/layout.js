@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
 
 import { Head } from '@components';
-import { theme } from '@styles';
+import { theme, GlobalStyle } from '@styles';
 
 const ContentStyle = styled.div`
     display: flex;
@@ -22,6 +22,7 @@ const Layout = ({ children, location }) => {
 
             <div id="root">
                 <ThemeProvider theme={theme}>
+                    <GlobalStyle />
                     <ContentStyle>
                         <div id="content">
                             {children}

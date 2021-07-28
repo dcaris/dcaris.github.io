@@ -1,60 +1,20 @@
 import * as React from "react"
-import styled from 'styled-components';
-
-// styles
-const PageStyle = styled.section`
-  ${({theme}) => theme.mixins.flexCenter};
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 0;
-`;
-const HeadingStyle = styled.h1`
-    margin: 0 0 30px 4px;
-    color: var(--green);
-    font-family: var(--font-mono);
-    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
-    font-weight: 400;
-    
-    @media (max-width: 480px) {
-      margin: 0 0 20px 2px;
-    }
-`;
-const HeadingAccentStyle = styled.span`
-    margin: 0 0 30px 4px;
-    color: var(--green);
-    font-family: var(--font-mono);
-    font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
-    font-weight: 400;
-
-    @media (max-width: 480px) {
-    margin: 0 0 20px 2px;
-    }
-`;
-
-const ParagraphStyle = styled.p`
-  marginBottom: 48
-`;
 
 // markup
 const About = () => {
     return (
-        <PageStyle>
-            <HeadingStyle>
-                Hi, my name is
+        <section>
+            <h1>About Me</h1>
+            <p>
+                Hey, my name is Daniel Caris and I am a Software Developer from Gold Coast, Australia.
                 <br />
-                <HeadingAccentStyle>Daniel Caris</HeadingAccentStyle>
-            </HeadingStyle>
-            <HeadingStyle>
-                <HeadingAccentStyle>And I build "stuff" with my hands</HeadingAccentStyle>
-            </HeadingStyle>
-            <ParagraphStyle>
-                I'm a Software Engineer based in Brisbane, QLD, Australia specializing in building systems in .NET.
-                <span role="img" aria-label="Sunglasses smiley emoji">
-                    😎
-                </span>
-            </ParagraphStyle>
-        </PageStyle>
+                I studied Information Technology at QUT and currently work at Virtus Health as a Senior Software Developer. .NET stack is my specialty, however am enjoying delving into the Node.js and Javascript world.
+                <br />
+                In my spare time, I'm either looking after my children, being a fantastic husband, trying to be a handyman around the house, surfing, or watching sport of any time. I'm crazy about NRL, AFL, and NFL, but enjoy everything except cricket (I don't like cricket... oh no. I hate it)
+                <br />
+                This site will contain my ramblings on items I'm keen to chat about. Trying to improve my Daily Fantasy Sports skills (DFS) so I'll be delving into the realm of sports analytics to try and gain an edge
+            </p>
+        </section>
     )
 }
 

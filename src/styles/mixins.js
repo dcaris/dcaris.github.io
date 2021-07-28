@@ -1,18 +1,19 @@
 import { css } from 'styled-components';
 
 const mixins = {
-    flexCenter: css`
+  flexCenter: css`
     display: flex;
     justify-content: center;
     align-items: center;
   `,
 
-    flexBetween: css`
+  flexBetween: css`
     display: flex;
     justify-content: space-between;
     align-items: center;
   `,
-    fancyList: css`
+
+  fancyList: css`
     padding: 0;
     margin: 0;
     list-style: none;
@@ -25,12 +26,12 @@ const mixins = {
         content: '▹';
         position: absolute;
         left: 0;
-        color: var(--green);
+        color: var(--primary-text);
       }
     }
   `,
 
-    resetList: css`
+  resetList: css`
     list-style: none;
     padding: 0;
     margin: 0;
