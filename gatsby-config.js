@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/dcaris",
   siteMetadata: {
     siteUrl: "https://dcaris.github.io",
     title: "Daniel Caris Portfolio",
