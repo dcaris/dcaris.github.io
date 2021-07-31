@@ -18,15 +18,15 @@ const ParagraphStyle = styled.p`
 const Landing = () => {
     return (
         <PageStyle>
-            <h1>
+            <h3>
                 Hi, my name is
-            </h1>
+            </h3>
             <h1>
                 Daniel Caris
             </h1>
-            <h1>
-                And I build "stuff" with my hands
-            </h1>
+            <h2 class="altHeading">
+                I build stuff with my hands
+            </h2>
             <ParagraphStyle>
                 I'm a Software Engineer based in Brisbane, QLD, Australia specializing in building systems in .NET.
                 <span role="img" aria-label="Sunglasses smiley emoji">

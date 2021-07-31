@@ -5,7 +5,7 @@ const variables = css`
     --primary: #5e35b1;
     --primary-light: #9162e4;
     --primary-dark: #280680;
-    --primary-text: #ffffff;
+    --primary-text: #d1c4e9;
     --secondary: #d1c4e9;
     --secondary-light: #fff7ff;
     --secondary-dark: #a094b7;
@@ -18,7 +18,10 @@ const variables = css`
     --fz-lg: 18px;
     --fz-xl: 20px;
     --fz-xxl: 22px;
-    --fz-heading: 32px;
+    --fz-heading: 64px;
+    --fz-subheading: 22px;
+    --fz-title: 35px;
+    --fz-subtitle: 20px;
     --border-radius: 4px;
     --nav-height: 100px;
     --nav-scroll-height: 70px;

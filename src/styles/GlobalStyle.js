@@ -94,18 +94,44 @@ section {
         padding: 60px 0;
     }
     h1 {
-        margin: 0 0 30px 4px;
-        color: var(--primary-text);
+        margin: 0 0 10px 4px;
+        color: white;
         font-family: var(--font-sans);
         font-size: var(--fz-heading);
         font-weight: bold;
+        line-height: 1.1;
         
         @media (max-width: 480px) {
-        margin: 0 0 20px 2px;
+            margin: 0 0 10px 2px;
+        }
+    }
+    h2 {
+        margin: 0 0 10px 4px;
+        color: white;
+        font-family: var(--font-sans);
+        font-size: var(--fz-title);
+        font-weight: bold;
+        
+        @media (max-width: 480px) {
+            margin: 0 0 10px 2px;
+        }
+    }
+    h3 {
+        margin: 0 0 10px 4px;
+        color: var(--primary-light);
+        font-family: var(--font-sans);
+        font-size: var(--fz-subtitle);
+        font-weight: bold;
+        
+        @media (max-width: 480px) {
+            margin: 0 0 10px 2px;
         }
     }
     p {
         marginBottom: 48,
+    }
+    .altHeading {
+        color: var(--secondary);
     }
 }
 `;

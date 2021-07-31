@@ -3,7 +3,7 @@ import * as React from "react"
 const Work = () => {
     return (
         <section>
-            <h1>Where I Have Worked</h1>
+            <h2>Where I Have Worked</h2>
             <p>
                 Virtus Health
             </p>
