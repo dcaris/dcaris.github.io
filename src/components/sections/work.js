@@ -70,7 +70,7 @@ const Work = () => {
                             : company
                         }
                         <br />
-                        <CompanyMetaStyle>{location} ({range})</CompanyMetaStyle>
+                        <CompanyMetaStyle>{title} - {location} ({range})</CompanyMetaStyle>
                         </CompanyTitleStyle>
                         <div dangerouslySetInnerHTML={{ __html: html }} />
                     </JobDetailStyle>
