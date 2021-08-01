@@ -20,6 +20,17 @@ const CompanyTitleStyle = styled.h3`
     }
 `;
 
+const CompanyMetaStyle = styled.span`
+    color: var(--secondary);
+    font-size: var(--fz-subsubtitle);
+`;
+
+const JobDetailStyle = styled.div`
+    ul {
+        ${({ theme }) => theme.mixins.fancyList};
+    }
+`;
+
 const Work = () => {
     const data = useStaticQuery(graphql`
     query {
@@ -53,14 +64,16 @@ const Work = () => {
                 const { title, url, company, range, location } = frontmatter;
 
                 return (
-                    <div>
+                    <JobDetailStyle>
                         <CompanyTitleStyle>{url && url.length > 0
                             ? <a href={url}>{company}</a>
                             : company
                         }
+                        <br />
+                        <CompanyMetaStyle>{location} ({range})</CompanyMetaStyle>
                         </CompanyTitleStyle>
                         <div dangerouslySetInnerHTML={{ __html: html }} />
-                    </div>
+                    </JobDetailStyle>
                 );
             })}
         </section>

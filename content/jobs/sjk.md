@@ -3,7 +3,7 @@ date: 2007-07-01
 title: 'Software Developer'
 company: 'SJK Consulting/Peepel'
 location: 'Brisbane, QLD'
-range: 'Jun 2007 - Octo 2010'
+range: 'Jun 2007 - Oct 2010'
 url: ''
 ---
 - Integral member of a small tech start-up (Peepel) which developed an Online Office Suite (WAMP, jQuery, AJAX) that included a word processor, spreadsheet, mapping engine, and geolocating/real time location tracking framework (Windows Mobile, ASP.NET, REST). 
