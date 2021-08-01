@@ -17,6 +17,12 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-pnpm",
     "gatsby-plugin-styled-components",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: []
+      }
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
@@ -25,6 +31,14 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "content",
+        path: "./content/",
+      },
+      __key: "content",
     },
   ],
 };
