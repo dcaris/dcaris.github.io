@@ -1,5 +1,4 @@
-import { useStaticQuery } from "gatsby";
-import { graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby";
 import * as React from "react"
 import styled from "styled-components";
 
@@ -64,7 +63,7 @@ const Work = () => {
                 const { title, url, company, range, location } = frontmatter;
 
                 return (
-                    <JobDetailStyle>
+                    <JobDetailStyle key={i}>
                         <CompanyTitleStyle>{url && url.length > 0
                             ? <a href={url}>{company}</a>
                             : company

@@ -52,7 +52,7 @@ const About = () => {
                 {sectionData && sectionData.map(({ node }, i) => {
                     const { html } = node;
                     return (
-                        <div dangerouslySetInnerHTML={{ __html: html }} />
+                        <div dangerouslySetInnerHTML={{ __html: html }} key={i} />
                     );
                 })}
                 <PictureStyle>

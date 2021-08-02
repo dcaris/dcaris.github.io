@@ -14,6 +14,10 @@ const ParagraphStyle = styled.p`
   marginBottom: 48
 `;
 
+const AltHeading = styled.h2`
+    color: var(--secondary);
+`;
+
 // markup
 const Landing = () => {
     return (
@@ -24,9 +28,9 @@ const Landing = () => {
             <h1>
                 Daniel Caris
             </h1>
-            <h2 class="altHeading">
+            <AltHeading>
                 I build stuff with my hands
-            </h2>
+            </AltHeading>
             <ParagraphStyle>
                 I'm a Software Engineer based in Brisbane, QLD, Australia specializing in building systems in .NET.
                 <span role="img" aria-label="Sunglasses smiley emoji">
