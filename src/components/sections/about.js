@@ -44,7 +44,7 @@ const About = () => {
     }
 `);
     const sectionData = data.sections.edges;
-    
+
     return (
         <section>
             <h2>About Me</h2>
@@ -57,7 +57,10 @@ const About = () => {
                 })}
                 <PictureStyle>
                     <StaticImage
+                        className="img"
                         src="../../images/profile.jpeg"
+                        width={500}
+                        alt="Headshot"
                     />
                 </PictureStyle>
             </PanelStyle>
