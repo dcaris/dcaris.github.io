@@ -1,15 +1,37 @@
+import { useStaticQuery, graphql } from "gatsby";
 import * as React from "react"
 
 // markup
 const Contact = () => {
+    const data = useStaticQuery(graphql`
+    query {
+        sections: allMarkdownRemark(
+            filter: { fileAbsolutePath: { regex: "/sections/" }, frontmatter: { title: { eq: "contact" } } }
+            sort: { fields: [frontmatter___date], order: DESC }
+        ) {
+            edges {
+                node {
+                    html
+                    frontmatter {
+                        title
+                    }
+                }
+            }
+        }
+    }
+`);
+    const sectionData = data.sections.edges;
     return (
         <section>
             <h2>
                 Get In Touch
             </h2>
-            <p>
-                Although I am not currently looking for work, feel free to contact me through LinkedIn and I'll try and get back to you!!
-            </p>
+            {sectionData && sectionData.map(({ node }, i) => {
+                const { html } = node;
+                return (
+                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                );
+            })}
         </section>
     )
 }
