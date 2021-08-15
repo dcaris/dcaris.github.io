@@ -56,7 +56,7 @@ const Work = () => {
     const jobsData = data.jobs.edges;
 
     return (
-        <section>
+        <section id="work">
             <h2>Where I Have Worked</h2>
             {jobsData && jobsData.map(({ node }, i) => {
                 const { frontmatter, html } = node;

@@ -24,7 +24,7 @@ const variables = css`
     --fz-subtitle: 25px;
     --fz-subsubtitle: 20px;
     --border-radius: 4px;
-    --nav-height: 100px;
+    --nav-height: 75px;
     --nav-scroll-height: 70px;
     --tab-height: 42px;
     --tab-width: 120px;

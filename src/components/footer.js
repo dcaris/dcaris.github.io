@@ -1,12 +1,7 @@
 import * as React from "react"
 import styled from "styled-components";
 import { socialMedia } from '../reference_data';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { library } from '@fortawesome/fontawesome-svg-core'
-
-// This adds FontAwesome Brand icons to the local library in order to use
-library.add(fab);
+import * as Icons from "react-icons/fa";
 
 const FooterStyle = styled.footer`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -33,16 +28,31 @@ const SocialStyle = styled.div`
     }
 `;
 
+/**
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
+const GetReactIcon = ({icon}) => {
+    const IconComponent = Icons[icon];
+
+    if (!IconComponent){
+        return <Icons.FaBeer />
+    }
+
+    return <IconComponent />
+}
+
 const Footer = () => {
     return (
         <FooterStyle>
             <SocialStyle>
                 <ul>
-                    {socialMedia && socialMedia.map(({ name, url }, i) => {
+                    {socialMedia && socialMedia.map(({ url, icon }, i) => {
                         return (
                             <li key={i}>
                                 <a href={url}>
-                                    <FontAwesomeIcon icon={["fab", name.toLowerCase()]} size="lg" />
+                                    <GetReactIcon icon={icon} />
                                 </a>
                             </li>
                         );

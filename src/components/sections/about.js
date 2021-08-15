@@ -46,7 +46,7 @@ const About = () => {
     const sectionData = data.sections.edges;
 
     return (
-        <section>
+        <section id="about">
             <h2>About Me</h2>
             <PanelStyle>
                 {sectionData && sectionData.map(({ node }, i) => {

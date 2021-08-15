@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import { useState } from 'react';
 
-import { Head } from '@components';
+import { Head, Nav, Footer } from '@components';
 import { theme, GlobalStyle } from '@styles';
 
 const ContentStyle = styled.div`
@@ -12,10 +11,7 @@ const ContentStyle = styled.div`
     min-height: 100vh;
 `;
 
-const Layout = ({ children, location }) => {
-    const isHome = location.pathname === '/';
-    const [isLoading, setIsLoading] = useState(isHome);
-
+const Layout = ({ children }) => {
     return (
         <>
             <Head />
@@ -23,10 +19,12 @@ const Layout = ({ children, location }) => {
             <div id="root">
                 <ThemeProvider theme={theme}>
                     <GlobalStyle />
+                    <Nav />
                     <ContentStyle>
                         <div id="content">
                             {children}
                         </div>
+                        <Footer />
                     </ContentStyle>
                 </ThemeProvider>
             </div>

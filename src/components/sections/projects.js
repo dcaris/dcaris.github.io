@@ -1,10 +1,9 @@
 import * as React from "react"
-import styled from 'styled-components';
 
 // markup
 const Projects = () => {
     return (
-        <section>
+        <section id="projects">
             <h2>
                 What I Have Worked On
             </h2>

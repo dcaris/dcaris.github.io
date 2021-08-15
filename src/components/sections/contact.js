@@ -22,7 +22,7 @@ const Contact = () => {
 `);
     const sectionData = data.sections.edges;
     return (
-        <section>
+        <section id="contact">
             <h2>
                 Get In Touch
             </h2>
