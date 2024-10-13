@@ -1,0 +1,26 @@
+languageCode = "en"
+languageName = "English"
+languageDirection = "ltr"
+weight = 1
+
+title = "Daniel Caris"
+# copyright = "Copy, _right?_ :thinking_face:"
+
+[params]
+  dateFormat = "2 January 2006"
+
+  # mainSections = ["section1", "section2"]
+  # description = "My awesome website"
+
+[params.author]
+name = "Daniel Caris"
+image = "img/author.jpg"
+headline = "I build stuff with my hands"
+bio = "I'm a Software Engineer based in Brisbane, QLD, Australia"
+links = [
+  { github = "https://github.com/dcaris" },
+  { instagram = "https://www.instagram.com/dcaris/" },
+  { x-twitter = "https://twitter.com/dcaris" },
+  { youtube = "https://youtube.com/dcaris" },
+  { linkedin = "https://www.linkedin.com/in/daniel-caris-1501b122/" },
+]
