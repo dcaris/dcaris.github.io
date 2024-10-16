@@ -1,3 +1,3 @@
-## Hi, I'm Daniel Caris, software engineer and hobby woodworker
+<h1 style="text-align:center;">Hi, I'm Daniel Caris, Software Engineer and hobby Woodworker</h1>
 
-#### I build stuff with my hands
+<h3 style="text-align:center;">I build stuff with my hands</h3>
