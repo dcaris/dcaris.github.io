@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dcaris.github.io/sitemap.xml
