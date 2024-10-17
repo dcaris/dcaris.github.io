@@ -1,3 +1,1 @@
-<h1 style="text-align:center;">Hi, I'm Daniel Caris, Software Engineer and hobby Woodworker</h1>
-
-<h3 style="text-align:center;">I build stuff with my hands</h3>
+I'm a Senior Software Engineer (C#, Go) and hobby Woodworker from Brisbane, Australia
