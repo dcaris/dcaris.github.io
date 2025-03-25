@@ -1,1 +1,1 @@
-I'm a Senior Software Engineer (C#, Go) and hobby Woodworker from Brisbane, Australia
+I'm a Senior Software Engineer (C#, learning Golang) and hobby Woodworker from Brisbane, Australia
