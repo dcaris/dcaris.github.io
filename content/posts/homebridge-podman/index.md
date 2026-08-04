@@ -1,7 +1,7 @@
 ---
 date: 2024-10-16
 title: 'Using Podman to host Homebridge Container'
-tags: ['Podman', 'Homebridge', 'HomeKit']
+tags: ['podman', 'homebridge', 'homekit']
 ---
 
 Finally bought an Apple TV 4k (Gen 3) for the sole purpose of setting up `Homebridge`. Got it all setup with TV and on the network, and started the grind that is setting up Homebridge.
